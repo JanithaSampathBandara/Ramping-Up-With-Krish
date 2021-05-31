@@ -1,0 +1,16 @@
+{
+  "name": "pre-order-traversal",
+  "version": "1.0.0",
+  "description": "Demonstrate the Pre-Order-Traversal of a Binary Tree",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon app.js"
+  },
+  "type": "module",
+  "author": "Janitha Bandara",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "leave-node-printer",
+  "version": "1.0.0",
+  "description": "Print all the leaf nodes where the depth of the leaf node is greater than 10 ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "type": "module",
+  "author": "Janitha Bandara",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
