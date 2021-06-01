@@ -17,7 +17,7 @@ export const anagramChecker = (word1, word2) => {
                 if (charArray1[elementIndex+1] < charArray1[elementIndex]) {
                     [charArray1[elementIndex], charArray1[elementIndex+1]] = [charArray1[elementIndex+1], charArray1[elementIndex]];
                 }
-                
+
                 // Swapping letters of word2 into alphabetical order
                 if (charArray2[elementIndex+1] < charArray2[elementIndex]) {
                     [charArray2[elementIndex], charArray2[elementIndex+1]] = [charArray2[elementIndex+1], charArray2[elementIndex]];
@@ -43,9 +43,3 @@ export const anagramChecker = (word1, word2) => {
         return "These are not Anagram words";
     }
 }
-
-let word1 = 'janz';
-let word2 = 'janz';
-word1 = word1.toLowerCase();
-word2 = word2.toLowerCase();
-console.log(anagramChecker(word1, word2));
