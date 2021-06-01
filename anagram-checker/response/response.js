@@ -4,5 +4,4 @@ export default class Response{
         this.code = code;
         this.message = message;
     }
-
 }

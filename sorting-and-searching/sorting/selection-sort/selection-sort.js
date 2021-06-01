@@ -1,21 +1,21 @@
-export const selectionSort = array => {
+export const selectionSort = numbers => {
     
-    for(let i=0; i<array.length-1; i++){
+    for(let iteration=0; iteration<numbers.length-1; iteration++){
         
-        let smallest = array[i];
-        let smallestIndex = i;
+        let smallest = numbers[iteration];
+        let smallestIndex = iteration;
 
-        for(let j=i; j<array.length-1; j++){
-            if(array[j+1] < smallest){
-                smallest = array[j+1];
-                smallestIndex = j+1;
+        // Getting the smallest number
+        for(let position=iteration; position<numbers.length-1; position++){
+            if(numbers[position+1] < smallest){
+                smallest = numbers[position+1];
+                smallestIndex = position+1;
             }
         }
 
-        let temp = array[i];
-        array[i] = smallest;
-        array[smallestIndex] = temp;
+        // Swapping numbers into ascending order
+        [numbers[iteration], numbers[smallestIndex]] = [numbers[smallestIndex], numbers[iteration]]
         
     }
-    return array;
+    return numbers;
 }

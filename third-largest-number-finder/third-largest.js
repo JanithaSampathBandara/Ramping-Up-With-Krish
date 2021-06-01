@@ -1,26 +1,22 @@
-export const thirdLargest = array => {
+export const thirdLargest = numberArray => {
     
-    for(let i=0; i<3; i++){
+    // Sorting the number sequence array for three times only since we need the 3rd largest number.
+    for(let outer=0; outer<3; outer++){
 
-        let largest = array[i];
+        let largest = numberArray[outer];
         let largestIndex = 0;
 
-        for(let j=i; j<array.length-1; j++){
-            if( array[j+1] > largest){
-                largest = array[j+1];
-                largestIndex = j+1;
+        for(let inner=outer; inner<numberArray.length-1; inner++){
+            if( numberArray[inner+1] > largest){
+
+                largest = numberArray[inner+1];
+                largestIndex = inner+1;
             }
         }
-
-        let temp = array[i];
-        array[i] = largest;
-        array[largestIndex] = temp;
+        // Swapping numbers into descending order
+        [numberArray[outer], numberArray[largestIndex]] = [numberArray[largestIndex], numberArray[outer]]
         
     }
-    return `Third largest number : ${array[2]}`
-}
 
-// Take the first element as largest. 
-//  Then go through the rest of the elements to find any largest value than this.
-//  After the first iteration, largest will replaced with the first element.
-//  This will continue for three times since I need third largest number.
+    return `Third largest number : ${numberArray[2]}`
+}

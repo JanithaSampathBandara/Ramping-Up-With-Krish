@@ -1,25 +1,24 @@
-export default function missingNumber(array) {
+ export const missingNumber = (array) => {
 
     //Sorting the existing array
-    for(let i=0; i<array.length-1; i++){
-        let smallest = array[i];
-        let smallestIndex= i;
+    for (let round=0; round<array.length-1; round++) {
+        let smallest = array[round];
+        let smallestIndex= round;
 
-        for(let j=i; j<array.length-1; j++){
-            if(array[j+1] < smallest){
-                smallest = array[j+1]
-                smallestIndex = j+1;
+        for (let elementIndex=round; elementIndex<array.length-1; elementIndex++) {
+            if (array[elementIndex+1] < smallest) {
+                smallest = array[elementIndex+1]
+                smallestIndex = elementIndex+1;
             }  
         }
-        let temp = array[i];
-        array[i] = smallest;
-        array[smallestIndex] = temp;
+        // Swapping numbers into ascending order
+        [array[round], array[smallestIndex]] = [array[smallestIndex], array[round]]
     }
 
     //Checking the missing number 
-    for(let k=0; k< array.length-1; k++){
-        if(array[k+1] != array[k]+1){
-            return `Missing Number Is : ${array[k]+1}`;
+    for(let index=0; index< array.length-1; index++){
+        if(array[index+1] != array[index]+1){
+            return `Missing Number Is : ${array[index]+1}`;
         }
     }
 }

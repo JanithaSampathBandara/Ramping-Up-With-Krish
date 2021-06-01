@@ -1,18 +1,19 @@
 export const palindromeChecker = word => { 
 
     let count = 0;
-    for(let i=0; i<Math.floor((word.length/2)); i++){
+    for (let index=0; index<Math.floor((word.length/2)); index++) {
     
-        if(word[i] !== word[word.length-1-i]){
+        // Comparing letters from both sides of the array to check whether they are equal or not
+        if (word[index] !== word[word.length-1-index]) {
             count++;
             break;
         }
     }
 
-    if(count > 0){
+    if (count > 0) {
         return `${word} is not a Palindrome`;
     }
-    else{
+    else {
         return `${word} is a Palindrome`;
     }
 }

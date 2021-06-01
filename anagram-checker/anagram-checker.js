@@ -1,52 +1,51 @@
-export default function anagramChecker(word1, word2) {
+export const anagramChecker = (word1, word2) => {
 
-    console.log("Word 1 : ", word1);
-    console.log("Word 2 : ", word2);
     word1 = word1.toLowerCase();
     word2 = word2.toLowerCase();
 
     //Check whether both words have same no of letters
-    if(word1.length === word2.length){
-        var charArray1 = [];
-        var charArray2 = [];
-
+    if (word1.length === word2.length) {
+        
         //Create two char arrays from both words
-        for(let i=0; i<word1.length; i++){
-            charArray1.push(word1[i]);
-            charArray2.push(word2[i]);
-        }
+        let [charArray1, charArray2] = [[...word1], [...word2]];
 
         //Sort both char arrays into alphabetical order
-        for(let j=0; j<(charArray1.length)-1; j++){
-            for(let k=0; k<(charArray1.length)-1; k++){
-                if(charArray1[k+1] < charArray1[k]){
-                    let temp1 = charArray1[k];
-                    charArray1[k] = charArray1[k+1];
-                    charArray1[k+1] = temp1;
+        for (let index=0; index<charArray1.length-1; index++) {
+            for (let elementIndex=0; elementIndex<charArray1.length-1; elementIndex++) {
+
+                // Swapping letters of word1 into alphabetical order
+                if (charArray1[elementIndex+1] < charArray1[elementIndex]) {
+                    [charArray1[elementIndex], charArray1[elementIndex+1]] = [charArray1[elementIndex+1], charArray1[elementIndex]];
                 }
-                if(charArray2[k+1] < charArray2[k]){
-                    let temp2 = charArray2[k];
-                    charArray2[k] = charArray2[k+1];
-                    charArray2[k+1] = temp2;
+                
+                // Swapping letters of word2 into alphabetical order
+                if (charArray2[elementIndex+1] < charArray2[elementIndex]) {
+                    [charArray2[elementIndex], charArray2[elementIndex+1]] = [charArray2[elementIndex+1], charArray2[elementIndex]];
                 }
             }   
         }
         
         //Check whether both char arrays have same letters from the begining since both are sorted into alphabetical order
         let count = 0;
-        for(let l=0; l<charArray1.length; l++){
-            if(charArray1[l] != charArray2[l]){
+        for (let index=0; index<charArray1.length; index++) {
+            if (charArray1[index] != charArray2[index]) {
                 count++;
             }
         }
-        if(count > 0){
+        if (count > 0) {
             return "These are not Anagram words";
         }
-        else{
+        else {
             return "These are Anagram words";
         }
     }
-    else{
+    else {
         return "These are not Anagram words";
     }
 }
+
+let word1 = 'janz';
+let word2 = 'janz';
+word1 = word1.toLowerCase();
+word2 = word2.toLowerCase();
+console.log(anagramChecker(word1, word2));
