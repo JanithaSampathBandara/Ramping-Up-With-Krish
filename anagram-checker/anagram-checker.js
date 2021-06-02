@@ -11,16 +11,16 @@ export const anagramChecker = (word1, word2) => {
 
         //Sort both char arrays into alphabetical order
         for (let index=0; index<charArray1.length-1; index++) {
-            for (let elementIndex=0; elementIndex<charArray1.length-1; elementIndex++) {
+            for (let innerIndex=0; innerIndex<charArray1.length-1; innerIndex++) {
 
                 // Swapping letters of word1 into alphabetical order
-                if (charArray1[elementIndex+1] < charArray1[elementIndex]) {
-                    [charArray1[elementIndex], charArray1[elementIndex+1]] = [charArray1[elementIndex+1], charArray1[elementIndex]];
+                if (charArray1[innerIndex+1] < charArray1[innerIndex]) {
+                    [charArray1[innerIndex], charArray1[innerIndex+1]] = [charArray1[innerIndex+1], charArray1[innerIndex]];
                 }
 
                 // Swapping letters of word2 into alphabetical order
-                if (charArray2[elementIndex+1] < charArray2[elementIndex]) {
-                    [charArray2[elementIndex], charArray2[elementIndex+1]] = [charArray2[elementIndex+1], charArray2[elementIndex]];
+                if (charArray2[innerIndex+1] < charArray2[innerIndex]) {
+                    [charArray2[innerIndex], charArray2[innerIndex+1]] = [charArray2[innerIndex+1], charArray2[innerIndex]];
                 }
             }   
         }

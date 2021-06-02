@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 app.use(express.json());
-import missingNumber from './missing-number.js';
+import { missingNumber } from './missing-number.js';
 
 app.get('/', (request, response) => {
     response.send('Welcome to Missing Number Checker');

@@ -1,20 +1,20 @@
 export const selectionSort = numbers => {
     
-    for(let iteration=0; iteration<numbers.length-1; iteration++){
+    for(let index=0; index<numbers.length-1; index++){
         
-        let smallest = numbers[iteration];
-        let smallestIndex = iteration;
+        let smallest = numbers[index];
+        let smallestIndex = index;
 
         // Getting the smallest number
-        for(let position=iteration; position<numbers.length-1; position++){
-            if(numbers[position+1] < smallest){
-                smallest = numbers[position+1];
-                smallestIndex = position+1;
+        for(let innerIndex=index; innerIndex<numbers.length-1; innerIndex++){
+            if(numbers[innerIndex+1] < smallest){
+                smallest = numbers[innerIndex+1];
+                smallestIndex = innerIndex+1;
             }
         }
 
         // Swapping numbers into ascending order
-        [numbers[iteration], numbers[smallestIndex]] = [numbers[smallestIndex], numbers[iteration]]
+        [numbers[index], numbers[smallestIndex]] = [numbers[smallestIndex], numbers[index]]
         
     }
     return numbers;

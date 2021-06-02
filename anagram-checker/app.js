@@ -1,5 +1,5 @@
 import express from 'express';
-import anagramChecker from './anagram-checker.js';
+import { anagramChecker } from './anagram-checker.js';
 import Response from './response/response.js';
 const app = express();
 app.use(express.json());

@@ -1,18 +1,18 @@
  export const missingNumber = (array) => {
 
     //Sorting the existing array
-    for (let round=0; round<array.length-1; round++) {
-        let smallest = array[round];
-        let smallestIndex= round;
+    for (let index=0; index<array.length-1; index++) {
+        let smallest = array[index];
+        let smallestIndex= index;
 
-        for (let elementIndex=round; elementIndex<array.length-1; elementIndex++) {
+        for (let elementIndex=index; elementIndex<array.length-1; elementIndex++) {
             if (array[elementIndex+1] < smallest) {
                 smallest = array[elementIndex+1]
                 smallestIndex = elementIndex+1;
             }  
         }
         // Swapping numbers into ascending order
-        [array[round], array[smallestIndex]] = [array[smallestIndex], array[round]]
+        [array[index], array[smallestIndex]] = [array[smallestIndex], array[index]]
     }
 
     //Checking the missing number 

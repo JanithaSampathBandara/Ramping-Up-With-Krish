@@ -1,15 +1,15 @@
 export const bubbleSort = numbers => {
 
-    for(let iteration=0; iteration<numbers.length-1; iteration++){
+    for(let index=0; index<numbers.length-1; index++){
 
         let flag = 0;
 
-        for(let position=0; position<numbers.length-1-iteration; position++){
+        for(let innerIndex=0; innerIndex<numbers.length-1-index; innerIndex++){
             
-            if(numbers[position] > numbers[position+1]){
+            if(numbers[innerIndex] > numbers[innerIndex+1]){
 
                 // Swapping numbers into ascending order
-                [numbers[position], numbers[position+1]] = [numbers[position+1], numbers[position]]
+                [numbers[innerIndex], numbers[innerIndex+1]] = [numbers[innerIndex+1], numbers[innerIndex]]
                 flag++;
             }
 
