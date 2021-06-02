@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto" style="border:solid 3px darkred">
+            <h2 style="text-align: center;"><u>Fibonacci Position Calculator</u></h2><hr>
+            <form>
+                <div class="row">
+                    <div class="col">   
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="fontCus"><b>Enter The Fibonacci Position -> </b></div>
+                            </div>
+                            <input (keypress)="onKeyPress()" class="form-control" required type="number" id="inputNumber"  name="inputNumber" #inputNumber>
+                            <div class="input-group-append">
+                                <input type="submit" class="btn btn-primary btn-lg" (click)="calculateFibonacci(inputNumber.value)" value="Calculate">
+                            </div>
+                        </div>
+                        <h5 *ngIf="result > 0" style="text-align: center;" [ngModel] ="result" name="namee">Fibonacci number for position {{inputNumber.value}} is : <b>{{result}}</b></h5><br />
+                    </div>
+                </div>
+            </form>
+            <b><h5 *ngIf="!validity">Number Must Be Greater Than Zero!!</h5></b>
+        </div>
+    </div>
+</div>
