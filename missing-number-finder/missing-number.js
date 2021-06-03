@@ -5,10 +5,10 @@
         let smallest = array[index];
         let smallestIndex= index;
 
-        for (let elementIndex=index; elementIndex<array.length-1; elementIndex++) {
-            if (array[elementIndex+1] < smallest) {
-                smallest = array[elementIndex+1]
-                smallestIndex = elementIndex+1;
+        for (let indexIn=index; indexIn<array.length-1; indexIn++) {
+            if (array[indexIn+1] < smallest) {
+                smallest = array[indexIn+1]
+                smallestIndex = indexIn+1;
             }  
         }
         // Swapping numbers into ascending order

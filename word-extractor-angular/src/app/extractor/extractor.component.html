@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="border: 3px solid darkred;">
+            <h2><u>Word Extractor</u></h2>
+            <h3>Enter the sentence you want to extract</h3>
+            <textarea [(ngModel)]="inputSentence" rows="4" cols="50"></textarea><br />
+            <input type="submit" value="Extract" (click)="extract()" class="btn btn-primary btn-md"><br />
+        </div>
+    </div>
+    <b><h5 *ngIf="!validity">No Words Found With Vowels!!</h5></b>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="table-responsive" *ngIf="filteredArray.length">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Extracted Values</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let word of filteredArray">
+                        <tr>
+                            <td style="text-align: center;">{{word}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
