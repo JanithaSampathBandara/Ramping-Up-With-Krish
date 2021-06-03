@@ -14,7 +14,7 @@
                                 <input type="submit" class="btn btn-primary btn-lg" (click)="calculateFibonacci(inputNumber.value)" value="Calculate">
                             </div>
                         </div>
-                        <h5 *ngIf="result > 0" style="text-align: center;" [ngModel] ="result" name="namee">Fibonacci number for position {{inputNumber.value}} is : <b>{{result}}</b></h5><br />
+                        <h5 *ngIf="result > 0" style="text-align: center;" name="namee">Fibonacci number for position {{inputNumber.value}} is : <b>{{result}}</b></h5><br />
                     </div>
                 </div>
             </form>

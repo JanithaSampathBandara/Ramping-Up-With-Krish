@@ -19,11 +19,15 @@ export class FibonacciComponent implements OnInit {
   calculateFibonacci(userInput: any): number{
 
     let answer = 0;
-    if (userInput <= 2) {
-      this.validity = !this.validity;
+    if (userInput <= 0) {
+      this.validity = false;
+    }
+    else if (userInput <= 2) {
+      this.validity = true;
+      this.result = 1;
     }
     else {
-      this.validity = !this.validity;
+      this.validity = true;
       let firstNumber = 1;
       let secondNumber = 1;
 
@@ -40,6 +44,7 @@ export class FibonacciComponent implements OnInit {
   // tslint:disable-next-line:typedef
   onKeyPress() {
     this.result = 0;
+    this.validity = true;
   }
 
 
