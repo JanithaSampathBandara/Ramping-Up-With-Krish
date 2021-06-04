@@ -27,7 +27,7 @@ export class ExtractorComponent implements OnInit {
 
   extract(): void {
 
-      this.filteredArray = this.inputSentence.split(' ').filter((word => word)).filter(word => word.match(/[aeiou]/gi)).sort();
+      this.filteredArray = this.inputSentence.split(' ').filter(word => word.match(/[aeiou]/gi)).sort();
 
       if (!this.filteredArray.length) {
         this.validity = false;
