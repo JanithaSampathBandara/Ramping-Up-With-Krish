@@ -27,14 +27,32 @@ export class ExtractorComponent implements OnInit {
 
   extract(): void {
 
-      this.filteredArray = this.inputSentence.split(' ').filter(word => word.match(/[aeiou]/gi)).sort();
+      let filteredArray: string[] = [];
 
-      if (!this.filteredArray.length) {
+      filteredArray = this.inputSentence.split(' ').filter(word => word.match(/[aeiou]/gi));
+
+      if (!filteredArray.length) {
         this.validity = false;
-      }
-      else {
-        this.validity = true;
-      }
+        this.filteredArray = filteredArray;
 
+      } else {
+
+        // Sorting the words inside filtered array into natural order
+        for (let index = 0; index < filteredArray.length - 1; index++) {
+
+          for (let indexIn = 0; indexIn < filteredArray.length - 1; indexIn++) {
+
+            if (filteredArray[indexIn] > filteredArray[indexIn + 1]) {
+
+              // Swapping the words inside filtered array
+              [filteredArray[indexIn], filteredArray[indexIn + 1]] = [filteredArray[indexIn + 1], filteredArray[indexIn]];
+
+            }
+          }
+        }
+
+        this.filteredArray = filteredArray;
+        this.validity = true;
+    }
   }
 }
