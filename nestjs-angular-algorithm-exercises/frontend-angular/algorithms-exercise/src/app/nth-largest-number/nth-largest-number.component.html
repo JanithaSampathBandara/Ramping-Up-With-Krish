@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="border: 3px solid darkred;">
+            <p>Enter the number sequence : Eg: 10,20,50,40</p>
+            <textarea rows="4" cols="50" [(ngModel)]="numberSequence"></textarea><br />
+            <p>nth position : <input type="number" [(ngModel)]="nthNumber">
+            <input type="submit" value="Find" (click)="getNthLargestNumber()" class="btn btn-primary"> </p>
+            <label>Number is : {{result}}</label>
+        </div>
+    </div>
+</div>
+
+
+
+

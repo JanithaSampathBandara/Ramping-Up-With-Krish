@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="border: 3px solid darkred;">
+            <p>First Word : </p> <input type="text" [(ngModel)]="word1">
+            <p>Second Word : </p> <input type="text" [(ngModel)]="word2">
+            <input type="submit" (click) ="getAnagrammability()" value="Check"><br />
+            <label>Anagrammability => {{result}}</label>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="border: 3px solid darkred;">
+            <h3>Enter the sentence/word you want to count</h3>
+            <textarea rows="4" cols="50" [(ngModel)]="inputSentence"></textarea><br />
+            <input type="submit" value="Count" class="btn btn-primary btn-md" (click)="getOccurencesCount()"><br />
+            <p>Result => {{result}}</p>
+        </div>
+    </div>
+</div>
