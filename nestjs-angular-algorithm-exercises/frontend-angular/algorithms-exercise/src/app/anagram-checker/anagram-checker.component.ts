@@ -11,20 +11,20 @@ export class AnagramCheckerComponent implements OnInit {
 
   word1: string;
   word2: string;
-  result: boolean;
+  result: any;
 
   constructor(private algorithmService: AlgorithmService) { }
 
   ngOnInit(): void {
   }
 
-  getAnagrammability(): void {
-    const anagramDto = new AnagramDto(this.word1, this.word2);
-
-    this.algorithmService.getAnagrammability(anagramDto).then((data: any) => {
-      this.result = data;
-    }).catch((error) => {
-      console.log(`Error occured : ${error}`);
-    });
+  async getAnagrammability(): Promise<any> {
+    try {
+      const anagramDto = new AnagramDto(this.word1, this.word2);
+      const response = await this.algorithmService.getAnagrammability(anagramDto);
+      this.result = response;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

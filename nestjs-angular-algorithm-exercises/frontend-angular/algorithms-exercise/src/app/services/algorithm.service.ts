@@ -14,8 +14,8 @@ export class AlgorithmService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
-  public async getAnagrammability(anagramDto: AnagramDto){
-    return await this.http.post(`${this.baseUrl}/anagram`, anagramDto).toPromise();
+  public getAnagrammability(anagramDto: AnagramDto){
+    return this.http.post(`${this.baseUrl}/anagram`, anagramDto).toPromise();
   }
 
   // tslint:disable-next-line:typedef
