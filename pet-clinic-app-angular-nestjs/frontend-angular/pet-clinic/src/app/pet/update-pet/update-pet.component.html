@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 style="text-align: center;">Pet Update Form</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto"  style="border: 3px solid darkred;">
+            <form [formGroup]="updateForm" (ngSubmit)="updatePet()">
+                <div class="form-group">
+                    <label>Name</label>
+                      <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label>Breed</label>
+                      <input type="text" readonly class="form-control" formControlName="breed">
+                </div>
+                <div class="form-group">
+                    <label>Color</label>
+                      <input type="text" readonly class="form-control" formControlName="color">
+                </div>
+                <div class="form-group">
+                    <label>Weight</label>
+                      <input type="number" class="form-control" formControlName="weight">
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                      <input type="text" readonly class="form-control" formControlName="dob">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                      <input type="text" readonly class="form-control" formControlName="category">
+                </div><br />
+                <div class="form-group text-center">
+                    <input type="submit" value="Update" class="btn btn-primary" style="font-size: 20px;">                    
+                </div><br />
+            </form>
+        </div>
+    </div><br />
+    <div *ngIf="formErrors" style="border: orange 3px solid">
+        <div *ngFor="let error of formErrors">
+            <p>{{error}}</p>
+        </div>
+    </div> <br />
+</div>
