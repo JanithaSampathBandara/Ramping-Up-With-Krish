@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto" style="border: 3px solid darkred;">
+            <input type="file" (change)="fileChange($event)" multiple="multiple">
+            <input *ngIf="selectedFiles.length" type="button" class="btn btn-primary" value="Upload" (click)="upload()"> <br />
+            <div *ngFor="let file of selectedFiles">
+                <p>{{file.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

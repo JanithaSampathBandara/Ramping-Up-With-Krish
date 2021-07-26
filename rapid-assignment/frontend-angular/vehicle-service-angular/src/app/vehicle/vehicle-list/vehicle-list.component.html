@@ -1,0 +1,50 @@
+<button>fff</button>
+<table></table>
+<div class="container-fluid">
+    <div class="row" style="text-align: center;">
+        <div class="col">
+            <!--  <input type="submit" value="Register Vehicle"  class="btn btn-primary"> -->
+            <!--<a class="btn btn-primary" routerLink='/register'>Register</a> -->
+        </div>
+    </div><br />
+    <div  *ngIf="allVehicles.length" class="row" style="border: 3px solid darkred;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">First Name</th>
+                    <th style="text-align: center;">Last Name</th>
+                    <th style="text-align: center;">E-mail</th>
+                    <th style="text-align: center;">Car Make</th>
+                    <th style="text-align: center;">Car Model</th>
+                    <th style="text-align: center;">Manufactured Date</th>
+                    <th style="text-align: center;">Vin Number</th>
+                    <th style="text-align: center;">Age of Vehicle</th>
+                    <th style="text-align: center;">Edit</th>
+                    <th style="text-align: center;">Delete</th>
+                    
+                </tr>
+            </thead>
+            <tbody *ngFor="let vehicle of allVehicles" >
+                <tr>
+                    <td style="text-align: center;">{{vehicle.firstName}}</td>
+                    <td style="text-align: center;">{{vehicle.lastName}}</td>
+                    <td style="text-align: center;">{{vehicle.email}}</td>
+                    <td style="text-align: center;">{{vehicle.carMake}}</td>
+                    <td style="text-align: center;">{{vehicle.carModel}}</td>
+                    <td style="text-align: center;">{{vehicle.manufacturedDate}}</td>
+                    <td style="text-align: center;">{{vehicle.vinNumber}}</td>
+                    <td style="text-align: center;">{{vehicle.ageOfVehicle}}</td>
+                    <td style="text-align: center;"><input class="btn btn-primary btns" type="submit" value="Edit" (click)="loadUpdate(vehicle.id)"></td>
+                    <td style="text-align: center;"><input type="submit" class="btn btn-danger btns" (click)="deleteVehicle(vehicle.id)" value="Delete">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button (click)="getAllVehiclesPaginated()">Paginated</button> {{totalCount}}
+    <div>
+        <ngb-pagination [collectionSize]="totalCount" [(page)]="pageNumber" [pageSize]="pageSize" (pageChange)="pageChange()" maxSize="10"></ngb-pagination>
+    </div>
+    
+</div>
+
+

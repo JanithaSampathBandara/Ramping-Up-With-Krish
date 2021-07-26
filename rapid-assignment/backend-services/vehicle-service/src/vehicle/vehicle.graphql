@@ -1,0 +1,53 @@
+
+type Query {
+  getVehicleById(id: Int!): Vehicle
+  getAllVehicles(first: Int): [Vehicle]
+  getAllVehiclesPaginated(first: Int, offset: Int): VehicleConnection
+
+}
+
+type Vehicle {
+
+  id: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  carMake: String!
+  carModel: String!
+  vinNumber: String!
+  manufacturedDate: String!
+  ageOfVehicle: Int
+}
+
+type VehicleConnection {
+  nodes: [Vehicle]
+  totalCount: Int
+}
+
+input VehicleCreateDto{
+
+  firstName: String!
+  lastName: String!
+  email: String!
+  carMake: String!
+  carModel: String!
+  vinNumber: String!
+  manufacturedDate: String!
+  ageOfVehicle: Int
+}
+
+input VehicleUpdateDto {
+
+  id: Int!
+  firstName: String
+  lastName: String
+  email: String
+}
+
+
+type Mutation {
+  createVehicle(vehicleCreateInput: VehicleCreateDto!) : Vehicle
+  createVehicleTest(vehicleInput: VehicleCreateDto!): Vehicle
+  updateVehicleById(vehicleUpdateInput: VehicleUpdateDto!): Vehicle
+  deleteVehicleById(id: Int!): Vehicle
+}

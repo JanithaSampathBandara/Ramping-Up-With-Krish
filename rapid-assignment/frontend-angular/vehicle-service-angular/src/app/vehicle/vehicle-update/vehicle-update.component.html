@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 style="text-align: center;">Vehicle Update Form</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto"  style="border: 3px solid darkred;">
+            <form [formGroup]="vehicleUpdateForm" (ngSubmit)="updateVehicle()">
+                <div class="form-group">
+                    <label>First Name</label>
+                      <input type="text" class="form-control" formControlName="firstName">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                      <input type="text" class="form-control" formControlName="lastName">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                      <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label>Car Make</label>
+                      <input readonly type="text" class="form-control" formControlName="carMake">
+                </div>
+                <div class="form-group">
+                    <label>Car Model</label>
+                      <input readonly type="text" class="form-control" formControlName="carModel">
+                </div>
+                <div class="form-group">
+                    <label>Manufactured Date</label>
+                      <input readonly type="text" class="form-control" formControlName="manufacturedDate">
+                </div>
+                <div class="form-group">
+                    <label>Vin Number</label>
+                      <input readonly type="text" class="form-control" formControlName="vinNumber">
+                </div>
+                <div class="form-group">
+                    <label>Age of Vehicle</label>
+                      <input readonly type="text" class="form-control" formControlName="ageOfVehicle">
+                </div><br />
+                <div class="form-group text-center">
+                    <input type="submit" value="Update" class="btn btn-primary" style="font-size: 20px;">                    
+                </div><br />
+            </form>
+        </div>
+    </div><br />
+    <!--
+    <div *ngIf="formErrors" style="border: orange 3px solid">
+        <div *ngFor="let error of formErrors">
+            <p>{{error}}</p>
+        </div>
+    </div> <br /> -->
+</div>
